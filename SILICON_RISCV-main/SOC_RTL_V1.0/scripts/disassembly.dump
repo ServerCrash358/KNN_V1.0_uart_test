@@ -1,0 +1,31 @@
+    0:        01000db7        lui x27 0x1000
+    4:        000012b7        lui x5 0x1
+    8:        fa028293        addi x5 x5 -96
+
+0000000c <loop>:
+    c:        fff28293        addi x5 x5 -1
+    10:        fe029ee3        bne x5 x0 -4 <loop>
+    14:        01000137        lui x2 0x1000
+    18:        030003b7        lui x7 0x3000
+    1c:        00400f93        addi x31 x0 4
+
+00000020 <read_first_locations>:
+    20:        00012183        lw x3 0 x2
+    24:        0033a023        sw x3 0 x7
+    28:        00410113        addi x2 x2 4
+    2c:        ffff8f93        addi x31 x31 -1
+    30:        fe0f98e3        bne x31 x0 -16 <read_first_locations>
+    34:        00000493        addi x9 x0 0
+    38:        001ff4b7        lui x9 0x1ff
+    3c:        00001437        lui x8 0x1
+    40:        ff040413        addi x8 x8 -16
+    44:        008484b3        add x9 x9 x8
+    48:        009d8533        add x10 x27 x9
+    4c:        00400f93        addi x31 x0 4
+
+00000050 <read_last_words_4>:
+    50:        00052183        lw x3 0 x10
+    54:        0033a023        sw x3 0 x7
+    58:        00450513        addi x10 x10 4
+    5c:        ffff8f93        addi x31 x31 -1
+    60:        fe0f98e3        bne x31 x0 -16 <read_last_words_4>
